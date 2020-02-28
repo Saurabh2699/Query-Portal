@@ -1,0 +1,66 @@
+<html>
+
+<head>
+  <style>
+    .table-container {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .table-container td,.table-container th {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    .table-container tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .table-container tr:hover {
+      background-color: #ddd;
+    }
+
+    .table-container th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: center;
+      background-color: #4CAF50;
+      color: white;
+    }
+    .table-container tr {
+      text-align: center;
+    }
+    .heading {
+      text-align: center;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="heading">Query Table</h1>
+  <% if(queries!=null) { %>
+  <table class="table-container">
+    <tr>
+      <th>Name</th>
+      <th>Email </th>
+      <th>Phone Number</th>
+      <th>Query Type</th>
+      <th>Query Description</th>
+    </tr>
+    <% queries.forEach(function (query) { %>
+    <tr>
+      <td><%= query.name%></td>
+      <td><%= query.email%></td>
+      <td><%= query.phnNo%></td>
+      <td><%= query.queryType%></td>
+      <td><%= query.queryDescription%></td>
+
+    </tr>
+    <% }) %>
+  </table>
+  <% } %>
+</body>
+
+</html>
